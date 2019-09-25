@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import GetUserInformation from './GetUserInformation';
+import GetUserInformation from './components/GetUserInformation';
 
 
 
 class App extends Component {
   constructor () {
     super()
-  //     this.state = {
-  //       repos: []
   }
 
   render () {
   return (
-      <div className="FormContainer">
+      <div className="App">
+        <h2>What's your favourite github language?</h2>
         <GetUserInformation/>
       </div>  
     );

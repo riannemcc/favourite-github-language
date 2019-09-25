@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import PropTypes from "prop-types";
+import '../App.css';
 import axios from 'axios';
-import Repos from './Repos'
+import FavouriteLanguage from './FavouriteLanguage'
 
 class GetUserInformation extends React.Component {
     constructor(props) {
@@ -42,27 +43,32 @@ class GetUserInformation extends React.Component {
         });
     }
 
-    getLanguages(repos) {
-      return repos.map((element) => { 
+    getLanguages(response) {
+      return response.map((element) => { 
         return element.language });
     }
 
     render() {
-      console.log(this.state.repoLanguages)
       return (
         <div>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="Enter GitHub username" value={this.state.value} onChange={this.handleChange} />
-              <div className='button__container'>
-                <input className='button' type="submit" value="Submit" />
+                <input className="nameBox" type="text" placeholder="Enter GitHub username" value={this.state.value} onChange={this.handleChange} />
+                <input className="button" type="submit" value="Submit" />
+            </form>
+              <div className="userDetails">
                 <h1>{this.state.username}</h1>
                 <img src={this.state.avatar} alt="Profile avatar"></img>
-                <li>{this.state.repoLanguages} </li>
               </div>
-            </form>
+            <FavouriteLanguage
+              repoLanguages={this.state.repoLanguages}
+              username={this.state.username}
+            />
         </div>
       );
     }
   }
-
+  GetUserInformation.propTypes = {
+    languages: PropTypes.array,
+    username: PropTypes.string
+}
   export default GetUserInformation;
