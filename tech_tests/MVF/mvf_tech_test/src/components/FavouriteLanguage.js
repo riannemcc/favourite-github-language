@@ -9,14 +9,14 @@ class FavouriteLanguage extends Component {
     }
 
     favourite(repoLanguages){
-        // let languagesGrouped = {};
-        // return repoLanguages.map( function (a) { if (a in languagesGrouped) languagesGrouped[a] ++; else languagesGrouped[a] = 1; });
-        return repoLanguages.sort((a,b) =>
-        repoLanguages.filter(v => v===a).length
-        - repoLanguages.filter(v => v===b).length
-        ).pop();
-  
+       const languagesGrouped = repoLanguages.reduce(function (previous, item) {
+            if ( item in previous ) previous[item] ++;
+            else previous[item] = 1;
+            return previous;
+        }, {} );
+        return Object.keys(languagesGrouped).reducefilter((a, b) => languagesGrouped[a] > languagesGrouped[b] ? a : b);
     }
+
 
     render() {
         if(this.props.repoLanguages.length !== 0){
