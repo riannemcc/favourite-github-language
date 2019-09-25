@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import NameForm from './NameForm';
+import GetUserInformation from './GetUserInformation';
+// import Repos from './Repos';
 import axios from 'axios'
 
 class App extends Component {
   constructor () {
     super()
-    // this.state = {
-    //   // username: '',
-    //   // avatar: '',
-    //   // repos: ''
-    // }
-    // this.handleClick = this.handleClick.bind(this)
+  //     this.state = {
+  //       repos: []
   }
 
   render () {
   return (
       <div className="FormContainer">
-        <NameForm/>
+        <GetUserInformation/>
       </div>  
     );
   }
