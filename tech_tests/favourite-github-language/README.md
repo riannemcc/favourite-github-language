@@ -1,3 +1,38 @@
+## What's your favourite GitHub language?
+
+#### An app which allows the user to enter their github username and will then return their 'favourite' coding language based on the frequency of language in their repos. It will also display the amount of projects they've created in that language. 
+
+![Imgur](https://i.imgur.com/kiDQaoH.png)
+![Imgur](https://i.imgur.com/SQyRs0Q.png)
+![Imgur](https://i.imgur.com/FOG6wsf.png)
+
+### To use the app:
+
+Locally:
+ 
+ 1. `git clone git@github.com:riannemcc/favourite-github-language.git`
+ 2. `cd favourite-github-language`
+ 3. `npm install`
+ 4. `npm start`
+ 
+ ### To run the tests:
+ 
+ 1. `npm start`
+ 2. `npx cypress open`
+ 
+ ### Tech stack  
+ 
+ React
+ Cypress
+ 
+ The app uses the GitHub API.
+ 
+ 
+ 
+ 
+ ## React Documentation:
+ 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
