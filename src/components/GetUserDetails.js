@@ -27,7 +27,7 @@ class GetUserDetails extends React.Component {
     let name = this.state.value;
     let url = "https://api.github.com/users/" + name;
     let repos_url = "https://api.github.com/users/" + name + "/repos";
-    alert("You have searched for: " + this.state.value);
+    alert("You searched for: " + this.state.value);
     event.preventDefault();
     axios
       .get(url)

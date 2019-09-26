@@ -8,23 +8,27 @@ class FavouriteLanguage extends Component {
   }
 
   favourite(repoLanguages) {
+
     const languagesGrouped = repoLanguages.reduce(function(previous, item) {
       if (item in previous) previous[item]++;
       else previous[item] = 1;
       return previous;
     }, {});
+
     let totalLanguages = undefined;
+
     Object.keys(languagesGrouped).forEach(function(x) {
       if (!totalLanguages) totalLanguages = languagesGrouped[x];
       else if (totalLanguages < languagesGrouped[x]) {
         totalLanguages = languagesGrouped[x];
       }
     });
+    
     let favouriteLanguage = Object.keys(languagesGrouped).filter(function(x) {
       return languagesGrouped[x] == totalLanguages;
     });
     return {
-      name: favouriteLanguage,
+      name: favouriteLanguage.join(", "),
       totalRepos: totalLanguages
     };
   }
