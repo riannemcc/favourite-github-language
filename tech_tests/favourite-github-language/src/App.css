@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva|Montserrat&display=swap');
+
 .App {
   text-align: center;
   background-color: #f0e9ef;
   height: 1000px;
   padding: 40px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Mansalva', cursive;
+  font-size: 18px;
 }
 
 .button {
-  background-color: #f7bef5;
+  background-color: #b38dba;
   border: solid;
   border-width: 1px;
   border-radius: 8px;
@@ -61,6 +64,9 @@
   margin-top: 20px;
   margin-bottom: 20px;
   width: auto;
+  background-color:#ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
 }
 
 .favouriteLanguage {
@@ -70,4 +76,7 @@
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  background-color:#ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
 }
