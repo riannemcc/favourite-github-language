@@ -27,10 +27,6 @@ class FavouriteLanguage extends Component {
       name: favouriteLanguage,
       totalRepos: totalLanguages
     };
-
-    // return Object.keys(languagesGrouped).filter(x => {
-    //     return languagesGrouped[x] == Math.max.apply(null, Object.values(languagesGrouped));
-    // });
   }
 
   render() {
