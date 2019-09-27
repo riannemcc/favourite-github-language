@@ -30,8 +30,8 @@ Locally:
  Cypress
  Enzyme  
  
- The app uses the GitHub API.
- There is currently a mix of 'old' React and 'new' React, as I've found that a lot of the learning materials online are still using the old. If I had more time, I would update all of the components to use the new React. 
+ The app uses the GitHub API.  
+ There is currently a mix of 'old' React and 'new' React, as I've found that a lot of the learning materials online are still using the old. If I had more time, I would update all of the components to use the new React. Consideration would also have to be given to whether the app would be efficient if it was given a github profile with a huge number of repositories. 
  
  ![Imgur](https://imgur.com/eNUdwbh.jpg)
  Cypress tests passing.   
