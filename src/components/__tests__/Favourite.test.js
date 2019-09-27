@@ -33,4 +33,19 @@ describe("FavouriteLanguage", () => {
     expect(headers).toHaveLength(2)
     expect(headers.at(0).text()).toContain("Fave language: ruby, java")
   })
+
+  it("renders no language if nothing provided by github", () => {
+    const repoLanguages = [];
+    const username = "riannemcc";
+    const wrapper = mount(
+      <FavouriteLanguage
+        repoLanguages={repoLanguages}
+        username={username}
+      />
+    );
+
+    const headers = wrapper.find("h3")
+    expect(headers).toHaveLength(1)
+    expect(headers.at(0).text()).toContain("Fave language: None!")
+    })
 });

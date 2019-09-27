@@ -43,7 +43,8 @@ class FavouriteLanguage extends Component {
         </div>
       );
     } else {
-      return null;
+      return (
+      <h3> Fave language: None! </h3>);
     }
   }
 }
