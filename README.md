@@ -24,13 +24,19 @@ Locally:
  
  ### Tech stack  
  
- React
+ React  
  Cypress
+ Enzyme  
  
  The app uses the GitHub API.
  
  ![Imgur](https://imgur.com/eNUdwbh.jpg)
  Cypress tests passing. 
+ 
+ 
+ 
+ 
+ 
  
  
  ## React Documentation:
