@@ -45,7 +45,7 @@ class GetUserDetails extends React.Component {
         this.setState({ repoLanguages: this.getLanguages(response.data) });
       })
       .catch(error => {
-        this.setState({ error: error, value: "" })
+        this.setState({ error: error, value: "" });
         console.log(error);
       });
   }
@@ -57,25 +57,13 @@ class GetUserDetails extends React.Component {
   }
 
   render() {
-    if(this.state.error) {
-      return (
-        <div >
-          <h3 className="errorMessage">Sorry, username not recognised!</h3>
-            <form onSubmit={this.handleSubmit}>
-            <input
-              className="nameBox"
-              type="text"
-              placeholder="Enter GitHub username"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-            <input className="button" type="submit" value="Submit" />
-          </form>
-        </div>
-      );
-    }
     return (
       <div>
+        <div>
+          {this.state.error ? (
+            <h3 className="errorMessage">Sorry, username not recognised!</h3>
+          ) : null}
+        </div>
         <form onSubmit={this.handleSubmit}>
           <input
             className="nameBox"
@@ -88,15 +76,13 @@ class GetUserDetails extends React.Component {
         </form>
         <div>
           {this.state.username ? (
-            <Name username={this.state.username} avatar={this.state.avatar} />
-          ) : null}
-        </div>
-        <div>
-          {this.state.username ? (
-            <FavouriteLanguage
-              repoLanguages={this.state.repoLanguages}
-              username={this.state.username}
-            />
+            <>
+              <Name username={this.state.username} avatar={this.state.avatar} />
+              <FavouriteLanguage
+                repoLanguages={this.state.repoLanguages}
+                username={this.state.username}
+              />
+            </>
           ) : null}
         </div>
       </div>
