@@ -2,6 +2,8 @@
 
 #### An app which allows the user to enter their github username and will then return their 'favourite' coding language based on the frequency of language in their repos. It will also display the amount of projects they've created in that language. 
 
+##### The app will return multiple languages if the user has an equal amounts of projects written in those languages. The app will return "None!" if the user does not have any languages registered on github. 
+
 ![Imgur](https://i.imgur.com/kiDQaoH.png)
 ![Imgur](https://i.imgur.com/SQyRs0Q.png)
 ![Imgur](https://i.imgur.com/FOG6wsf.png)
