@@ -36,7 +36,8 @@ class GetUserDetails extends React.Component {
         this.setState({
           username: response.data.name,
           avatar: response.data.avatar_url,
-          value: ""
+          value: "",
+          error: false
         });
         return axios.get(repos_url);
       })
@@ -44,7 +45,7 @@ class GetUserDetails extends React.Component {
         this.setState({ repoLanguages: this.getLanguages(response.data) });
       })
       .catch(error => {
-        this.setState({ error: error })
+        this.setState({ error: error, value: "" })
         console.log(error);
       });
   }
@@ -58,8 +59,18 @@ class GetUserDetails extends React.Component {
   render() {
     if(this.state.error) {
       return (
-        <div className="errorMessage">
-          <h3>Sorry, username not recognised!</h3>
+        <div >
+          <h3 className="errorMessage">Sorry, username not recognised!</h3>
+            <form onSubmit={this.handleSubmit}>
+            <input
+              className="nameBox"
+              type="text"
+              placeholder="Enter GitHub username"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+            <input className="button" type="submit" value="Submit" />
+          </form>
         </div>
       );
     }
