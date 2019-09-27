@@ -4,6 +4,8 @@
 
 ##### The app will return multiple languages if the user has an equal amounts of projects written in those languages. The app will return "None!" if the user does not have any languages registered on github and an error message if the username is not recognised. 
 
+[Visit the app!](https://amazing-poincare-360192.netlify.com/)
+
 ![Imgur](https://i.imgur.com/kiDQaoH.png)
 ![Imgur](https://i.imgur.com/SQyRs0Q.png)
 ![Imgur](https://i.imgur.com/FOG6wsf.png)
