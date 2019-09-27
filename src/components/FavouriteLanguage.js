@@ -8,7 +8,6 @@ class FavouriteLanguage extends Component {
   }
 
   favourite(repoLanguages) {
-
     const languagesGrouped = repoLanguages.reduce(function(previous, item) {
       if (item in previous) previous[item]++;
       else previous[item] = 1;
@@ -23,7 +22,7 @@ class FavouriteLanguage extends Component {
         totalLanguages = languagesGrouped[x];
       }
     });
-    
+
     let favouriteLanguage = Object.keys(languagesGrouped).filter(function(x) {
       return languagesGrouped[x] == totalLanguages;
     });
@@ -43,8 +42,7 @@ class FavouriteLanguage extends Component {
         </div>
       );
     } else {
-      return (
-      <h3> Fave language: None! </h3>);
+      return <h3> Fave language: None! </h3>;
     }
   }
 }
