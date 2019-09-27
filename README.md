@@ -1,4 +1,4 @@
-## What's your favourite GitHub language?
+## What's your favourite GitHub language?  
 
 #### An app which allows the user to enter their github username and will then return their 'favourite' coding language based on the frequency of language in their repos. It will also display the amount of projects they've created in that language. 
 
@@ -31,7 +31,8 @@ Locally:
  The app uses the GitHub API.
  
  ![Imgur](https://imgur.com/eNUdwbh.jpg)
- Cypress tests passing. 
+ Cypress tests passing.   
+ 
  
  
  
