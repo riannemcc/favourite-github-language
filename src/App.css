@@ -45,6 +45,11 @@
   width: 200px;
 }
 
+.errorMessage {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
 .avatar {
   text-align: center;
   max-width: 100%;

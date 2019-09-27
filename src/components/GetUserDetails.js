@@ -11,7 +11,8 @@ class GetUserDetails extends React.Component {
       value: "",
       username: "",
       avatar: "",
-      repoLanguages: []
+      repoLanguages: [],
+      error: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,13 +33,18 @@ class GetUserDetails extends React.Component {
     axios
       .get(url)
       .then(response => {
-        this.setState({ username: response.data.name, avatar: response.data.avatar_url, value: "" });
+        this.setState({
+          username: response.data.name,
+          avatar: response.data.avatar_url,
+          value: ""
+        });
         return axios.get(repos_url);
       })
       .then(response => {
         this.setState({ repoLanguages: this.getLanguages(response.data) });
       })
       .catch(error => {
+        this.setState({ error: error })
         console.log(error);
       });
   }
@@ -50,6 +56,13 @@ class GetUserDetails extends React.Component {
   }
 
   render() {
+    if(this.state.error) {
+      return (
+        <div className="errorMessage">
+          <h3>Sorry, username not recognised!</h3>
+        </div>
+      );
+    }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
