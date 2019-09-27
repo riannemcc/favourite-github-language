@@ -32,9 +32,7 @@ class GetUserDetails extends React.Component {
     axios
       .get(url)
       .then(response => {
-        this.setState({ username: response.data.name });
-        this.setState({ avatar: response.data.avatar_url });
-        this.setState({ value: "" });
+        this.setState({ username: response.data.name, avatar: response.data.avatar_url, value: "" });
         return axios.get(repos_url);
       })
       .then(response => {
@@ -69,16 +67,20 @@ class GetUserDetails extends React.Component {
             <Name username={this.state.username} avatar={this.state.avatar} />
           ) : null}
         </div>
-        <FavouriteLanguage
-          repoLanguages={this.state.repoLanguages}
-          username={this.state.username}
-        />
+        <div>
+          {this.state.username ? (
+            <FavouriteLanguage
+              repoLanguages={this.state.repoLanguages}
+              username={this.state.username}
+            />
+          ) : null}
+        </div>
       </div>
     );
   }
 }
 GetUserDetails.propTypes = {
-  languages: PropTypes.array,
+  repolanguages: PropTypes.array,
   username: PropTypes.string,
   avatar: PropTypes.string
 };
