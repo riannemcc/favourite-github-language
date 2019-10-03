@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import FavouriteLanguage from "./FavouriteLanguage";
-import Name from "./Name";
+import { Name } from "./Name";
 
 class GetUserDetails extends React.Component {
   constructor(props) {
