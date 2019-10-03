@@ -48,7 +48,6 @@ class FavouriteLanguage extends Component {
 }
 FavouriteLanguage.propTypes = {
   repoLanguages: PropTypes.array,
-  username: PropTypes.string
 };
 
 export default FavouriteLanguage;

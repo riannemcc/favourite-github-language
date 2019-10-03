@@ -11,7 +11,7 @@ class GetUserDetails extends React.Component {
       value: "",
       username: "",
       avatar: "",
-      repoLanguages: [],
+      repoLanguages: null,
       error: false
     };
 
@@ -76,13 +76,12 @@ class GetUserDetails extends React.Component {
         </form>
         <div>
           {this.state.username ? (
-            <>
               <Name username={this.state.username} avatar={this.state.avatar} />
+          ) : null}
+           {this.state.repoLanguages ? (
               <FavouriteLanguage
                 repoLanguages={this.state.repoLanguages}
-                username={this.state.username}
               />
-            </>
           ) : null}
         </div>
       </div>
